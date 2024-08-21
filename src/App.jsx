@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import React from "react";
 import Editor from "./components/Editor";
 import ReactDOMServer from "react-dom/server";
+import useLocalStorage from "./assets/hooks/UseLocalStorage";
 const App = () => {
-  const [html, setHtml] = useState("");
-  const [css, setCss] = useState("");
-  const [js, setJs] = useState("");
+  const [html, setHtml] = useLocalStorage("html", "");
+  const [css, setCss] = useLocalStorage("css", "");
+  const [js, setJs] = useLocalStorage("js", "");
   const [srcDoc, setSrcDoc] = useState("");
   useEffect(() => {
     const timeout = setTimeout(() => {

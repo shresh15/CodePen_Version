@@ -5,6 +5,7 @@ import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 import { Controlled as ControlledEditor } from "react-codemirror2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Editor(props) {
   const { language, displayName, value, onBeforeChange } = props;
   const [open, setOpen] = useState(true);
@@ -15,7 +16,10 @@ export default function Editor(props) {
     <div className="`editor-container ${open ? '' : 'colllapsed'}` p-2 grow basis-0 flex flex-col bg-blue-400">
       <div className=" flex justify-between bg-black text-white py-4 px-6 rounded-l">
         {displayName}
-        <button className="bg-white text-black px-3 py-1 rounded-lg">
+        <button
+          className="bg-white text-black px-3 py-1 rounded-lg"
+          onClick={() => setOpen((prevOpen) => !prevOpen)}
+        >
           o/c
         </button>
       </div>
