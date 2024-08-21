@@ -48,7 +48,7 @@ const App = () => {
         />
       </div>
       {/* top pane done */}
-      <div className="  bg-yellow-300 flex h-[50vh] pane">
+      <div className="  bg-blue-300 flex h-[50vh] pane">
         <iframe
           srcDoc={srcDoc}
           title="output"
